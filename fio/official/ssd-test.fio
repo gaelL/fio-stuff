@@ -17,7 +17,7 @@ iodepth=4
 size=10g
 direct=1
 runtime=60
-directory=/mount-point-of-ssd
+#directory=/mount-point-of-ssd
 filename=ssd.test.file
 
 [seq-read]
