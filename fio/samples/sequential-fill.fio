@@ -4,7 +4,7 @@ direct=0
 size=3g
 group_reporting
 thread
-filename=/mount/fio-test-file
+filename=/mnt/fio-test-file
 
 [sequential-fill]
 description=Sequential fill phase

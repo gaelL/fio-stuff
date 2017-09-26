@@ -27,4 +27,6 @@ fio --filename=/dev/xvdf --direct=1 --rw=randrw --rwmixwrite=5 --refill_buffers 
 
 ```
 docker run -it gaell/fio-stuff
+
+docker run -it -v /mnt:/mnt gaell/fio-stuff fio samples/random_rw.fio
 ```

@@ -9,7 +9,7 @@ bs=4k
 rw=randread
 norandommap
 random_distribution=zoned:50/5:30/15:20/
-directory=/mount
+directory=/mnt
 
 # The above applies to all of reads/writes/trims. If we wanted to do
 # something differently for writes, let's say 50% for the first 10%

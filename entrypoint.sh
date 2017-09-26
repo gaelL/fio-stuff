@@ -4,7 +4,7 @@ set -e
 set -x
 
 if [ ! "$1" ]; then
-    exec /bin/sh
+    exec /bin/cat /README
 fi
 
 #for fio_test in $(find /fio/*); do
