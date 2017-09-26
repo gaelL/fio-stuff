@@ -1,0 +1,4 @@
+[random_rw]
+rw=randrw
+size=3g
+directory=/mount
