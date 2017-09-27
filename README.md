@@ -36,7 +36,7 @@ docker run --rm -it  gaell/fio-stuff fio official/ssd-test.fio --directory=/mnt/
 docker run --rm -it -v /var/lib/docker:/mnt gaell/fio-stuff fio official/ssd-test.fio --directory=/mnt/ --runtime=120
 
 # Not tested yet
-docker run -it -v /var/lib/docker:/mnt gaell/fio-stuff fio official/latency-profile.fio --filename=/dev/sda  --runtime=120
+docker run -it -v /var/lib/docker:/mnt gaell/fio-stuff fio official/latency-profile.fio --filename=/mnt/foo  --runtime=120 --size=1G
 docker run -it -v /var/lib/docker:/mnt gaell/fio-stuff fio official/tiobench-example.fio  --runtime=120
 ```
 
