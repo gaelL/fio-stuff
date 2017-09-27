@@ -18,4 +18,4 @@ latency_window=5000000
 latency_percentile=99.9
 
 [device]
-filename=/dev/sda
+#filename=/dev/sda
