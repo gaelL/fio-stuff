@@ -26,7 +26,30 @@ fio --filename=/dev/xvdf --direct=1 --rw=randrw --rwmixwrite=5 --refill_buffers 
 ```
 
 ```
+docker info | grep Driver
+
 docker run -it gaell/fio-stuff
 
 docker run -it -v /mnt:/mnt gaell/fio-stuff fio samples/random_rw.fio
+
+docker run --rm -it  gaell/fio-stuff fio official/ssd-test.fio --directory=/mnt/ --runtime=120
+docker run --rm -it -v /var/lib/docker:/mnt gaell/fio-stuff fio official/ssd-test.fio --directory=/mnt/ --runtime=120
+
+# Not tested yet
+docker run -it -v /var/lib/docker:/mnt gaell/fio-stuff fio official/latency-profile.fio --filename=/dev/sda  --runtime=120
+docker run -it -v /var/lib/docker:/mnt gaell/fio-stuff fio official/tiobench-example.fio  --runtime=120
+```
+
+```
+## docker config
+
+# Overlayfs2
+vim /run/flannel/flannel_docker_opts.env
+DOCKER_OPTS="--storage-driver overlay2"
+
+# Devicemapper thinpool lvm
+pvcreate /dev/md127
+vgcreate vg001 /dev/md127
+lvcreate -L 100G -T vg001/thinpool
+DOCKER_OPTS="--storage-driver devicemapper --storage-opt=dm.use_deferred_deletion=true --storage-opt=dm.use_deferred_removal=true --storage-opt=dm.thinpooldev=/dev/mapper/vg001-thinpool"
 ```
